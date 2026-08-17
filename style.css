@@ -25,28 +25,23 @@ body{
     z-index:9999;
 }
 
-
 .loader img{
     width:160px;
     height:160px;
     object-fit:contain;
-    animation:logo3d 3s infinite ease-in-out;
+    animation:logo3d 3s infinite;
     filter:drop-shadow(0 0 30px gold);
 }
 
-
 .loader h1{
     color:#00ff88;
-    font-size:32px;
     animation:pulse 1s infinite;
 }
 
 
-
 @keyframes logo3d{
-
     0%{
-        transform:rotateY(0deg) scale(1);
+        transform:rotateY(0);
     }
 
     50%{
@@ -54,10 +49,9 @@ body{
     }
 
     100%{
-        transform:rotateY(360deg) scale(1);
+        transform:rotateY(360deg);
     }
 }
-
 
 
 @keyframes bgMove{
@@ -76,15 +70,14 @@ body{
 }
 
 
-
 @keyframes pulse{
-
-    0%,100%{
-        opacity:.4;
-    }
 
     50%{
         opacity:1;
+    }
+
+    100%{
+        opacity:.4;
     }
 }
 
@@ -103,7 +96,7 @@ body{
 .bubbles span{
 
     position:absolute;
-    bottom:-120px;
+    bottom:-100px;
 
     width:25px;
     height:25px;
@@ -115,47 +108,26 @@ body{
     box-shadow:
     0 0 20px #00ff88;
 
-    opacity:.35;
-
     animation:float 12s linear infinite;
 }
 
 
-.bubbles span:nth-child(1){
-    left:10%;
-    animation-duration:8s;
-}
-
-.bubbles span:nth-child(2){
-    left:30%;
-    animation-duration:10s;
-}
-
-.bubbles span:nth-child(3){
-    left:50%;
-    animation-duration:12s;
-}
-
-.bubbles span:nth-child(4){
-    left:70%;
-    animation-duration:9s;
-}
-
-.bubbles span:nth-child(5){
-    left:90%;
-    animation-duration:11s;
-}
+.bubbles span:nth-child(1){left:10%;}
+.bubbles span:nth-child(2){left:30%;}
+.bubbles span:nth-child(3){left:50%;}
+.bubbles span:nth-child(4){left:70%;}
+.bubbles span:nth-child(5){left:90%;}
 
 
 
 @keyframes float{
 
     from{
-        transform:translateY(0) scale(.5);
+        transform:translateY(0);
     }
 
     to{
-        transform:translateY(-120vh) scale(1.6);
+        transform:translateY(-120vh);
     }
 }
 
@@ -180,28 +152,26 @@ body{
 
     border-radius:30px;
 
-    border:1px solid rgba(0,255,136,.3);
-
     box-shadow:
     0 0 35px rgba(0,255,136,.5);
+
 }
 
 
 
-/* PROFILE IMAGE RGB 3D */
+/* PROFILE PHOTO RGB */
 
 
 .card img{
 
     width:130px;
-
     height:130px;
 
     border-radius:50%;
 
     object-fit:cover;
 
-    border:4px solid #111;
+    border:5px solid #111;
 
     animation:photoRGB 3s infinite linear;
 
@@ -212,26 +182,28 @@ body{
 @keyframes photoRGB{
 
     0%{
-        filter:drop-shadow(0 0 20px red);
+        box-shadow:0 0 20px red;
     }
 
-    33%{
-        filter:drop-shadow(0 0 25px cyan);
+    25%{
+        box-shadow:0 0 25px yellow;
     }
 
-    66%{
-        filter:drop-shadow(0 0 25px magenta);
+    50%{
+        box-shadow:0 0 25px cyan;
+    }
+
+    75%{
+        box-shadow:0 0 25px magenta;
     }
 
     100%{
-        filter:drop-shadow(0 0 20px red);
+        box-shadow:0 0 20px red;
     }
 
 }
 
 
-
-/* TEXT */
 
 
 h1{
@@ -245,7 +217,7 @@ p{
 
 
 
-/* RGB 3D BUTTON */
+/* BUTTON RGB 3D LIGHT */
 
 
 a,
@@ -263,7 +235,7 @@ a,
 
     border-radius:18px;
 
-    background:#111;
+    background:#00c96b;
 
     color:white;
 
@@ -279,12 +251,13 @@ a,
 
     z-index:1;
 
-    animation:buttonFloat 2s infinite ease-in-out;
+    animation:buttonFloat 2s infinite;
 
 }
 
 
 
+/* RGB BORDER */
 
 a::before,
 .copy-btn::before{
@@ -293,30 +266,31 @@ a::before,
 
     position:absolute;
 
-    inset:-4px;
+    inset:-5px;
 
     border-radius:22px;
 
-    background:
 
+    background:
     linear-gradient(
-    45deg,
+    90deg,
     red,
     yellow,
+    lime,
     cyan,
     blue,
     magenta,
     red
     );
 
+
     background-size:400%;
 
     animation:rgbMove 3s linear infinite;
 
-    z-index:-2;
+    z-index:-1;
 
 }
-
 
 
 
@@ -327,21 +301,15 @@ a::after,
 
     position:absolute;
 
-    inset:3px;
+    inset:4px;
 
     border-radius:15px;
 
-    background:
-    linear-gradient(
-    135deg,
-    #00ff88,
-    #0066ff
-    );
+    background:#00c96b;
 
     z-index:-1;
 
 }
-
 
 
 
@@ -350,6 +318,7 @@ a::after,
     0%{
         background-position:0%;
     }
+
 
     100%{
         background-position:400%;
@@ -360,10 +329,6 @@ a::after,
 
 
 @keyframes buttonFloat{
-
-    0%,100%{
-        transform:translateY(0);
-    }
 
     50%{
         transform:translateY(-5px);
@@ -377,10 +342,10 @@ a::after,
 
 .footer{
 
-    margin-top:20px;
-
     color:#ccc;
 
     font-size:13px;
 
-}
+    margin-top:20px;
+
+    }
